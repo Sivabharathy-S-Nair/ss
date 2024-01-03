@@ -1,0 +1,92 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+
+<body style="text-align:center;background-image:url({% static 'image/ff.jpg' %})" >
+<h1 style="text-align:center";>Enter the Details</h1>
+
+<form   action="login" method="post">
+     {% csrf_token %}
+
+    <input type="text" name="Name" placeholder="Enter your username"><br>
+    <input type="date" name="DOB" placeholder="Enter your date of birth"><br>
+    <input type="number" name="AGE" placeholder="Enter your age"><br>
+    <label>female</label>
+    <input type="radio">
+    <label>male</label>
+    <input type="radio" ><br>
+    <input type="number" name="phone number" placeholder="Enter your phone number"><br>
+    <input type="email" name="mail" placeholder="Enter your email"><br>
+    <input type="text" name="address" placeholder="Enter your address"><br>
+    <select>
+        <option value="Department">Department</option>
+        <option value="Department">Computer Science</option>
+        <option value="Department">Mathematics</option>
+        <option value="Department">Commerce</option>
+        <option value="Department">Physics</option>
+        <option value="Department">Humanities</option>
+    </select><br>
+    <select>
+        <option value="Courses">Courses</option>
+        <option value="Courses">Artificial intelligence</option>
+        <option value="Courses">Algorithms</option>
+        <option value="Courses">Computer security</option>
+        <option value="Courses">Google Cybersecurity</option>
+        <option value="Courses">Software development</option>
+        <option value="Courses">Computer networking</option>
+        <option value="Courses">Machine learning</option>
+        <option value="Courses">Algebra</option>
+        <option value="Courses">Calculus</option>
+        <option value="Courses">Mathematics for Engineers</option>
+        <option value="Courses">Precalculus</option>
+        <option value="Courses">Differential equations</option>
+        <option value="Courses">Bachelor of Computer Applications</option>
+        <option value="Courses">Bachelor of Commerce</option>
+        <option value="Courses">BA Economics</option>
+        <option value="Courses">Chartered accountancy</option>
+        <option value="Courses">Cost and Management Accountant</option>
+        <option value="Courses">Bachelor of Accounting and Finance</option>
+        <option value="Courses">Electromagnetism</option>
+        <option value="Courses">Introductory Physics</option>
+        <option value="Courses">Quantum mechanics</option>
+        <option value="Courses">Relativity</option>
+        <option value="Courses">Astronomy</option>
+        <option value="Courses">Mechanics</option>
+        <option value="Courses">Optics</option>
+        <option value="Courses">Bachelor of Arts in Political Science</option>
+        <option value="Courses">B a psychology</option>
+        <option value="Courses">Geography</option>
+        <option value="Courses">B a LLB</option>
+        <option value="Courses">Bachelor of Design</option>
+        <option value="Courses">Social work</option>
+        <option value="Courses">Economics</option>
+        <option value="Courses">B a History</option>
+        <option value="Courses">BBA</option>
+        <option value="Courses">BSC</option>
+    </select><br>
+    <select>
+        <option value="Purpose">Purpose</option>
+        <option value="Purpose">For Enquiry</option>
+        <option value="Purpose">Place Order</option>
+        <option value="Purpose">Return</option>
+        <!--<option value="Purpose">Physics</option>
+        <option value="Purpose">Humanities</option>--!>
+    </select><br>
+    Materials provide(choose from below):<br>
+      <label>Pen</label>
+    <input type="checkbox"><br>
+    <label>NoteBook</label>
+    <input type="checkbox"><br>
+    <label>Exam Pappers</label>
+    <input type="checkbox"><br>
+
+ <a href="{% url 'storeapp:order' %}"><button type="button">Submit</button></a>
+ <a href="{% url 'storeapp:index' %}"><button type="button">Logout</button></a>
+</form>
+</body>
+</html>

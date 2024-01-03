@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>buttonpage</title>
+</head>
+
+<body style="text-align:center;background-image:url({% static 'image/pexels-cdc-3992949.jpg' %})">
+<h1 style="text-align:center";>Please Click Here</h1>
+
+<form   action="click here" method="post">
+     {% csrf_token %}
+    <a href="{% url 'storeapp:newpage' %}"><button type="button">Click Here</button></a><br>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+         <li class="nav-item">
+   <a class="nav-link" href="{% url 'storeapp:index' %}">Home</a>
+ </li>
+          <li class="nav-item">
+              {% if user.is_authenticated %}
+               <li> hello {{user.username }}</li>
+   <a class="nav-link" href="credentials/logout">Logout</a>
+ </li>
+          {% else %}
+ <li class="nav-item">
+   <a class="nav-link" href="credentials/login">Login</a>
+ </li>
+ <li class="nav-item">
+   <a class="nav-link" href="credentials/register">Register</a>
+      {% endif %}
+ </li>
+  <!--      <li class="nav-item">
+           {% if user.is_authenticated %}
+          <li> hello {{user.username }}</li>
+          <a class="nav-link" href="credentials/logout">Logout</a>
+         {% else %}
+          <a class="nav-link" href="credentials/register">Register</a>
+          <a class="nav-link" href="credentials/login">Login</a>
+          {% endif %}
+        </li>
+        </li>-->
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Department
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'storeapp:computerscience' %}">Computer Science</a></li>
+            <li><a class="dropdown-item" href="{% url 'storeapp:mathematics' %}">Mathematics</a></li>
+            <li><a class="dropdown-item" href="{% url 'storeapp:commerce' %}">Commerce</a></li>
+            <li><a class="dropdown-item" href="{% url 'storeapp:physics' %}">Physics</a></li>
+            <li><a class="dropdown-item" href="{% url 'storeapp:humanities' %}">Humanities</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+   <!--<li class="nav-item">
+          <a class="nav-link " href=" "><i class="fa-solid fa-cart-shopping"></i></a>
+        </li>
+
+      </ul>
+      <form class="d-flex" action="" method="get">
+        {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Search" name="q" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>-->
+

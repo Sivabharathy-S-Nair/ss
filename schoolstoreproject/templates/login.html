@@ -1,0 +1,22 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+
+<body style="text-align:center;background-image:url({% static 'image/ddd.jpeg' %})">
+<h1 style="text-align:center";>LOGIN</h1>
+
+<form   action="login" method="post">
+     {% csrf_token %}
+
+    <input type="text" name="username" placeholder="Enter your username"><br>
+    <input type="password" name="password" placeholder="Enter your password"><br>
+       <a href="{% url 'storeapp:buttonpage' %}"><button type="button">Submit</button></a><br>
+           <a href="{% url 'credentials:register' %}">Register Here</a><br>
+</form>
+</body>
+</html>
